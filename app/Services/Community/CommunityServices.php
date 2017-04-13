@@ -25,7 +25,7 @@ class CommunityServices
 
     public function find_community()
     {
-//        return $this->communityRepository->index();
-        return $this->communityTypeRepository->index();
+        return $this->communityRepository->index();
+//        return $this->communityTypeRepository->index();
     }
 }

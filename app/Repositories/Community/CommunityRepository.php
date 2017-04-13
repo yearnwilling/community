@@ -11,15 +11,18 @@ namespace App\Repositories\Community;
 
 use App\Models\Community;
 use App\Repositories\BaseRepository;
+use Illuminate\Container\Container;
 
 class CommunityRepository extends BaseRepository
 {
-//    protected $community;
+    protected $communityTypeRepository;
 
-//    public function __construct(Community $community)
-//    {
-//        $this->community = $community;
-//    }
+    public function __construct(Container $container, CommunityTypeRepository $communityTypeRepository)
+    {
+        parent::__construct($container);
+        $this->communityTypeRepository = $communityTypeRepository;
+    }
+
     function model()
     {
         return 'App\Models\Community';
@@ -27,6 +30,7 @@ class CommunityRepository extends BaseRepository
 
     public function index()
     {
-        return $this->model->get(array('*'));
+//        return $this->model->get(array('*'));
+        return $this->communityTypeRepository->index();
     }
 }
