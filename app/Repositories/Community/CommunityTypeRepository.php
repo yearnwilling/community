@@ -12,7 +12,7 @@ namespace App\Repositories\Community;
 use App\Models\Community;
 use App\Repositories\BaseRepository;
 
-class CommunityRepository extends BaseRepository
+class CommunityTypeRepository extends BaseRepository
 {
 //    protected $community;
 
@@ -22,7 +22,7 @@ class CommunityRepository extends BaseRepository
 //    }
     function model()
     {
-        return 'App\Models\Community';
+        return 'App\Models\CommunityType';
     }
 
     public function index()
