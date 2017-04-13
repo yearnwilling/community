@@ -9,10 +9,19 @@
 namespace App\Services\Community;
 
 
+use App\Repositories\Community\CommunityRepository;
+
 class CommunityServices
 {
+    protected $communityRepository;
+
+    public function __construct(CommunityRepository $communityRepository)
+    {
+        $this->communityRepository = $communityRepository;
+    }
+
     public function find_community()
     {
-        return 1;
+        return $this->communityRepository->index();
     }
 }

@@ -13,7 +13,7 @@ class CreateCommunityTable extends Migration
      */
     public function up()
     {
-        Schema::create('communoty', function (Blueprint $table) {
+        Schema::create('community', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 255)->nullable()->default(FALSE)->index();
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateCommunityTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('communoty');
+        Schema::dropIfExists('community');
     }
 }
