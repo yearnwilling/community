@@ -16,7 +16,7 @@ abstract class BaseServices
 {
     protected $container;
 
-    protected $repository;
+    protected $repositories;
 
     public function __construct(Container $container)
     {
@@ -24,16 +24,25 @@ abstract class BaseServices
         $this->makeRepository();
     }
 
-    abstract function repository();
+    abstract function repositories();
 
 
     protected function makeRepository()
     {
-        $repository = $this->container->make($this->repository());
+        $repositories_container = $this->repositories();
 
-        if (!$repository instanceof BaseRepository)
-            throw new \Exception("Class {$this->repository()} must be an instance of Illuminate\\Database\\Eloquent\\Model");
+        foreach ($repositories_container as $key => $repository) {
+            $repository = $this->container->make($repository);
 
-        return $this->repository = $repository;
+            if (!$repository instanceof BaseRepository) {
+                throw new \Exception("Class {$this->repositories()} must be an instance of App\\Repositories\\BaseRepository");
+            }
+
+            $this->repositories[$key] = $repository;
+
+        }
+
+        return $this->repositories;
+
     }
 }

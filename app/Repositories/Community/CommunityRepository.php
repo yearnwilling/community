@@ -30,7 +30,7 @@ class CommunityRepository extends BaseRepository
 
     public function index()
     {
-//        return $this->model->get(array('*'));
-        return $this->communityTypeRepository->index();
+        return $this->model->get(array('*'));
+//        return $this->communityTypeRepository->index();
     }
 }
