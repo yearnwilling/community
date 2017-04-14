@@ -11,21 +11,18 @@ namespace App\Services\Community;
 
 use App\Repositories\Community\CommunityRepository;
 use App\Repositories\Community\CommunityTypeRepository;
+use App\Services\BaseServices;
 
-class CommunityServices
+class CommunityServices extends BaseServices
 {
-    protected $communityRepository;
-    protected $communityTypeRepository;
-
-    public function __construct(CommunityRepository $communityRepository, CommunityTypeRepository $communityTypeRepository)
+    public function repository()
     {
-        $this->communityRepository = $communityRepository;
-        $this->communityTypeRepository = $communityTypeRepository;
+        return 'App\Repositories\Community\CommunityRepository';
     }
 
     public function find_community()
     {
-        return $this->communityRepository->index();
+        return $this->repository->index();
 //        return $this->communityTypeRepository->index();
     }
 }
