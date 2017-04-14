@@ -9,8 +9,6 @@
 namespace App\Services\Community;
 
 
-use App\Repositories\Community\CommunityRepository;
-use App\Repositories\Community\CommunityTypeRepository;
 use App\Services\BaseServices;
 
 class CommunityServices extends BaseServices
@@ -27,6 +25,5 @@ class CommunityServices extends BaseServices
     {
 //        return $this->repositories['CommunityRepository']->index();
         return $this->repositories['CommunityTypeRepository']->index();
-//        return $this->communityTypeRepository->index();
     }
 }
