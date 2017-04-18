@@ -9,27 +9,12 @@
 namespace App\Repositories;
 
 use Illuminate\Container\Container;
+use \Repository_services\Rsc\Repository\BaseRepository as Repository;
 
-abstract class BaseRepository
+class BaseRepository extends Repository
 {
-    protected $container;
-
-    protected $model;
-
-    public function __construct(Container $container)
+    public function model()
     {
-        $this->container = $container;
-        $this->makeModel();
-    }
-
-    abstract function model();
-
-    public function makeModel() {
-        $model = $this->container->make($this->model());
-
-        if (!$model instanceof Model)
-            throw new \Exception("Class {$this->model()} must be an instance of Illuminate\\Database\\Eloquent\\Model");
-
-        return $this->model = $model;
+        // TODO: Implement model() method.
     }
 }

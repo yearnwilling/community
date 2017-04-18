@@ -23,7 +23,7 @@ class CommunityServices extends BaseServices
 
     public function find_community()
     {
-//        return $this->repositories['CommunityRepository']->index();
-        return $this->repositories['CommunityTypeRepository']->index();
+        return $this->repositories['CommunityRepository']->index();
+//        return $this->repositories['CommunityTypeRepository']->index();
     }
 }
