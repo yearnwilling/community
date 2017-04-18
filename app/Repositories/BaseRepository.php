@@ -9,7 +9,6 @@
 namespace App\Repositories;
 
 use Illuminate\Container\Container;
-use Illuminate\Database\Eloquent\Model;
 
 abstract class BaseRepository
 {
