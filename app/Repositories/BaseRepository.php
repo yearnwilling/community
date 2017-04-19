@@ -11,10 +11,19 @@ namespace App\Repositories;
 use Illuminate\Container\Container;
 use \Repository_services\Rsc\Repository\BaseRepository as Repository;
 
-class BaseRepository extends Repository
+abstract class BaseRepository extends Repository
 {
+    protected $modelsPath = "App\\Models\\";
+
+    protected $modelName = null;
+
     public function model()
     {
-        // TODO: Implement model() method.
+        return $this->modelsPath.$this->modelName();
+    }
+
+    function modelName()
+    {
+        return $this->modelName;
     }
 }

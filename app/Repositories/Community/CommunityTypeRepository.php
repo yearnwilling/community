@@ -14,16 +14,7 @@ use App\Repositories\BaseRepository;
 
 class CommunityTypeRepository extends BaseRepository
 {
-//    protected $community;
-
-//    public function __construct(Community $community)
-//    {
-//        $this->community = $community;
-//    }
-    function model()
-    {
-        return 'App\Models\CommunityType';
-    }
+    protected $modelName = 'CommunityType';
 
     public function index()
     {
