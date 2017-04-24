@@ -9,7 +9,7 @@
 namespace App\Repositories;
 
 use Illuminate\Container\Container;
-use \Repository_services\Rsc\Repository\BaseRepository as Repository;
+use \Repository_services\Rsc\Repository\Repository ;
 
 abstract class BaseRepository extends Repository
 {
