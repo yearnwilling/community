@@ -15,5 +15,20 @@ use Repository_services\Rsc\Service\Service;
 
 abstract class BaseServices extends Service
 {
+    protected $baseServicesPath = 'App\Repositories';
 
+    abstract function servicesNames();
+
+    public function repositories()
+    {
+        $repositories = array();
+        foreach ($this->servicesNames() as $name => $path) {
+            $repositories[$name] = $this->baseServicesPath.'\\'.$path;
+        }
+        return $repositories;
+    }
+
+    public function getService($serviceName) {
+        return $this->repositories[$serviceName];
+    }
 }

@@ -13,17 +13,16 @@ use App\Services\BaseServices;
 
 class CommunityServices extends BaseServices
 {
-    public function repositories()
-    {
+    public function servicesNames() {
         return array(
-            'CommunityRepository' => 'App\Repositories\Community\CommunityRepository',
-            'CommunityTypeRepository' => 'App\Repositories\Community\CommunityTypeRepository'
+            'CommunityRepository' => 'Community\CommunityRepository',
+            'CommunityTypeRepository' => 'Community\CommunityTypeRepository'
         );
     }
 
     public function find_community()
     {
-        return $this->repositories['CommunityRepository']->index();
-//        return $this->repositories['CommunityTypeRepository']->index();
+//        return $this->repositories['CommunityRepository']->index();
+        return $this->getService('CommunityTypeRepository')->index();
     }
 }
