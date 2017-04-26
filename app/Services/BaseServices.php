@@ -20,16 +20,16 @@ abstract class BaseServices extends Service
     //当前service下需要注册的service名字
     abstract function repositoriesNames();
 
-    public function repositories()
-    {
-        $repositories = array();
-        foreach ($this->repositoriesNames() as $name => $path) {
-            $repositories[$name] = $this->baseServicesPath.'\\'.$path;
-        }
-        return $repositories;
+    public function getRepository($RepositoryName) {
+        $this->registerRepository($RepositoryName);
+        return $this->repositories[$RepositoryName];
     }
 
-    public function getRepository($serviceName) {
-        return $this->repositories[$serviceName];
+    protected function registerRepository($repositoryName, $repository = null) {
+        $repositoriesNames = $this->repositoriesNames();
+        if (empty($repositoriesNames[$repositoryName])) {
+            throw new \Exception("the $repositoryName is not register in repositoriesNames function");
+        }
+        parent::registerRepository($repositoryName, $this->baseServicesPath.'\\'.$repositoriesNames[$repositoryName]);
     }
 }
