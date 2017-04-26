@@ -17,18 +17,19 @@ abstract class BaseServices extends Service
 {
     protected $baseServicesPath = 'App\Repositories';
 
-    abstract function servicesNames();
+    //当前service下需要注册的service名字
+    abstract function repositoriesNames();
 
     public function repositories()
     {
         $repositories = array();
-        foreach ($this->servicesNames() as $name => $path) {
+        foreach ($this->repositoriesNames() as $name => $path) {
             $repositories[$name] = $this->baseServicesPath.'\\'.$path;
         }
         return $repositories;
     }
 
-    public function getService($serviceName) {
+    public function getRepository($serviceName) {
         return $this->repositories[$serviceName];
     }
 }
