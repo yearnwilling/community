@@ -14,8 +14,6 @@ class Controller extends BaseController
 
     protected $baseServices;
 
-    protected $services;
-
     protected $baseServicesPath = 'App\Services';
 
     protected $resourcesNames = array(

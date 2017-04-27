@@ -20,7 +20,6 @@ class CommunityController extends Controller
     {
 //        $community = $this->getService('CommunityService')->find_community();
         $community = $this->getService('CommunityTypeService')->find_community_type();
-        var_dump($community);
-        exit();
+        return $community;
     }
 }

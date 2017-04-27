@@ -18,6 +18,7 @@ class CommunityTypeRepository extends BaseRepository
 
     public function index()
     {
-        return $this->model->get(array('*'));
+        $type = $this->model->get(array('*'));
+        return compact('type');
     }
 }
