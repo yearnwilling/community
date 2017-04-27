@@ -20,6 +20,6 @@ class CommunityController extends Controller
     {
 //        $community = $this->getService('CommunityService')->find_community();
         $community = $this->getService('CommunityTypeService')->find_community_type();
-        return $community;
+        return view('layout.dashboard');
     }
 }
