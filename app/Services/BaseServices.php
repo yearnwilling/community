@@ -39,7 +39,7 @@ abstract class BaseServices extends Service
         return $this->services[$serviceName];
     }
 
-    protected function registerService($serviceName, $service = null) {
+    public function registerService($serviceName, $service = null) {
         $resourcesNames = $this->resourcesNames();
         if (empty($resourcesNames[$serviceName])) {
             throw new \Exception("the $serviceName is not register in resourcesNames function");

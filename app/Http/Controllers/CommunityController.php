@@ -8,17 +8,18 @@ use Illuminate\Http\Request;
 class CommunityController extends Controller
 {
 
-    protected $communityController;
-
-    public function __construct(CommunityServices $communityServices)
-    {
-        $this->communityController = $communityServices;
-    }
+//    protected $communityController;
+//
+//    public function __construct(CommunityServices $communityServices)
+//    {
+//        $this->communityController = $communityServices;
+//    }
 
     //
     public function index()
     {
-        $community = $this->communityController->find_community();
+//        $community = $this->getService('CommunityService')->find_community();
+        $community = $this->getService('CommunityTypeService')->find_community_type();
         var_dump($community);
         exit();
     }
