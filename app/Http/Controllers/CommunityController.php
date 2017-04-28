@@ -18,8 +18,7 @@ class CommunityController extends Controller
     //
     public function index()
     {
-//        $community = $this->getService('CommunityService')->find_community();
-        $community = $this->getService('CommunityTypeService')->find_community_type();
-        return view('layout.dashboard');
+        $communities = $this->getService('CommunityService')->find_community();
+        return view('community.index', compact('communities'));
     }
 }

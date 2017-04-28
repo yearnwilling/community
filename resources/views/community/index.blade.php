@@ -1,17 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>@yield('title', 'Sample App') - Laravel 入门教程</title>
-    <link rel="stylesheet" href="/css/app.css">
-</head>
-<body>
-{{--@include('layouts._header')--}}
-<div class="container">
-{{--    @include('shared.messages')--}}
-    {{--@yield('content')--}}
-    {{--@include('layouts._footer')--}}
-</div>
-<script src="/js/app.js"></script>
+@extends('layout.dashboard')
 
-</body>
-</html>
+@section('title', '社团管理')
+
+
+@section('content-header')
+    <h1>
+        社团管理
+    </h1>
+@endsection
+
+@section('content-body-boxed')
+    <table class="table table-hover">
+        <tbody>
+        <tr>
+            <th>名字</th>
+        </tr>
+        @foreach($communities as $community)
+            <tr>
+                <td>{{ $community->name }}</td>
+            </tr>
+        @endforeach
+        </tbody>
+    </table>
+@endsection
