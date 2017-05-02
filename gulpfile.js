@@ -43,7 +43,6 @@ elixir(function(mix) {
     mix.scripts([
         '../assets/js/app.min.js',
         '../assets/js/bootstrap.min.js',
-        // '../assets/js/jquery-2.2.3.min.js',
     ], './public/js/vendor.js', './public/js');
 
 });
