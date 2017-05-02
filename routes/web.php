@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Route::get('/admin/login', 'UserController@create')->name('admin_login');
 Route::post('/admin/login', 'UserController@store')->name('admin_login');
+
 Route::group(array('prefix' => 'admin', 'middleware' => 'auth'), function ()
 {
     Route::get('/community', 'CommunityController@index')->name('community_index');

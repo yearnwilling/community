@@ -9,13 +9,27 @@
         <div class="login-box-body">
             <form action="{{ route('admin_login') }}" method="post">
                 <div class="form-group has-feedback">
-                    <input type="email" class="form-control" placeholder="Email" value="{{ old('email') }}">
+                    <input type="text" class="form-control" placeholder="Email/Username" name="email" value="{{ old('email') }}">
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                    @if ($errors->has('email'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('email') }}</strong>
+                        </span>
+                    @endif
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="password" class="form-control" placeholder="Password">
+                    <input type="password" class="form-control" placeholder="Password" name="password" >
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                 </div>
+                @foreach (['danger', 'warning', 'success', 'info', 'status'] as $msg)
+                    @if(session()->has($msg))
+                        <div class="flash-message">
+                            <p class="alert alert-{{ $msg }}">
+                                {{ session()->get($msg) }}
+                            </p>
+                        </div>
+                    @endif
+                @endforeach
                 <div class="row">
                     <div class="col-xs-8">
                         <div class="checkbox icheck">
