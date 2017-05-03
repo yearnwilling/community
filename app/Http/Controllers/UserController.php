@@ -8,8 +8,6 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    protected $loginPath = 'admin/login'; // <--- note this
-
     //
     public function create()
     {
@@ -33,11 +31,17 @@ class UserController extends Controller
 
         if ($this->checkAuth($credential_email, $credential_name, $request->has('remember'))) {
             session()->flash('success', '欢迎回来！');
-//            return redirect()->intended(route('community_index'));
+            return redirect()->intended(route('community_index'));
         } else {
             session()->flash('danger', '很抱歉，您的账号和密码不匹配');
             return redirect()->back();
         }
+    }
+
+    public function destroy()
+    {
+        Auth::logout();
+        return redirect(route('admin_login'));
     }
 
     protected function checkAuth($credential_email, $credential_name, $hasRemember)

@@ -96,7 +96,9 @@
                                     <!-- The progress bar -->
                                     <div class="progress xs">
                                         <!-- Change the css width attribute to simulate progress -->
-                                        <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar progress-bar-aqua" style="width: 20%"
+                                             role="progressbar" aria-valuenow="20" aria-valuemin="0"
+                                             aria-valuemax="100">
                                             <span class="sr-only">20% Complete</span>
                                         </div>
                                     </div>
@@ -150,7 +152,13 @@
                             <a href="#" class="btn btn-default btn-flat">Profile</a>
                         </div>
                         <div class="pull-right">
-                            <a href="#" class="btn btn-default btn-flat">Sign out</a>
+
+                            <form action="{{ route('admin_login_out') }}" method="POST">
+                                {{ csrf_field() }}
+                                {{ method_field('DELETE') }}
+                                <button type="submit" class="btn btn-default btn-flat">登出</button>
+                            </form>
+
                         </div>
                     </li>
                 </ul>

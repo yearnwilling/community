@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Route::get('/admin/login', 'UserController@create')->name('admin_login');
 Route::post('/admin/login', 'UserController@store')->name('admin_login');
+Route::delete('/admin/loginout', 'UserController@destroy')->name('admin_login_out');
 
 Route::group(array('prefix' => 'admin', 'middleware' => 'auth'), function ()
 {
