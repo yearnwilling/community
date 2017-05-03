@@ -35,8 +35,10 @@ desired effect
                     <ul class="sidebar-menu">
                         {{--<li class="header">HEADER</li>--}}
                         <!-- Optionally, you can add icons to the links -->
-                        <li class="active"><a href="#"><i class="glyphicon glyphicon-home"></i><span>主页</span></a></li>
-                        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+                        <li><a href="#"><i class="glyphicon glyphicon-home"></i><span>主页</span></a></li>
+                        <li @if ( isset($site) ?  $site : ''  === 'community') class="active" @endif>
+                            <a href="#"><i class="fa fa-street-view"></i> <span>社团列表</span></a>
+                        </li>
                         <li class="treeview">
                             <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
                                 <span class="pull-right-container">

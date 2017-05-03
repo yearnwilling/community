@@ -2,6 +2,7 @@
 
 @section('title', '社团管理')
 
+@define $site = 'community';
 
 @section('content-header')
     <h1>
