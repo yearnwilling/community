@@ -21,8 +21,12 @@ class CommunityServices extends BaseServices
         );
     }
 
-    public function find_community()
+    public function find_communities()
     {
-        return $this->getRepository('CommunityRepository')->index();
+        $communities =  $this->getRepository('CommunityRepository')->index();
+        foreach ($communities as &$community) {
+            var_dump($community);
+            exit();
+        }
     }
 }

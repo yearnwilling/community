@@ -15,10 +15,18 @@
         <tbody>
         <tr>
             <th>名字</th>
+            <th>创建时间</th>
+            <th>社长</th>
+            <th>分类</th>
+            <th>操作</th>
         </tr>
         @foreach($communities as $community)
             <tr>
                 <td>{{ $community->name }}</td>
+                <td>{{ $community->created_at }}</td>
+                <td>{{ $community->president_id }}</td>
+                <td>{{ $community->community_type_id }}</td>
+                <td></td>
             </tr>
         @endforeach
         </tbody>
