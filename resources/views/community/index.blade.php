@@ -24,8 +24,8 @@
             <tr>
                 <td>{{ $community->name }}</td>
                 <td>{{ $community->created_at }}</td>
-                <td>{{ $community->president_id }}</td>
-                <td>{{ $community->community_type_id }}</td>
+                <td>{{ $community->president->name }}</td>
+                <td>{{ $community->communityType->name }}</td>
                 <td></td>
             </tr>
         @endforeach

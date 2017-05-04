@@ -9,6 +9,7 @@
 namespace App\Services\Community;
 
 
+use App\Models\Community;
 use App\Services\BaseServices;
 
 class CommunityServices extends BaseServices
@@ -23,10 +24,6 @@ class CommunityServices extends BaseServices
 
     public function find_communities()
     {
-        $communities =  $this->getRepository('CommunityRepository')->index();
-        foreach ($communities as &$community) {
-            var_dump($community);
-            exit();
-        }
+        return $this->getRepository('CommunityRepository')->getAll(array('president', 'communityType'));
     }
 }

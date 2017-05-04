@@ -21,4 +21,9 @@ class CommunityRepository extends BaseRepository
     {
         return $this->model->get(array('*'));
     }
+
+    public function getAll($preload = array())
+    {
+        return $this->model->with($preload)->get();
+    }
 }
