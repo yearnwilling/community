@@ -18,6 +18,9 @@ class AdminUserSeeder extends Seeder
               'name' => 'admin',
               'email' => 'admin@community.com',
               'password' => bcrypt('admin'),
+              'roles' => 'super_admin',
+              'create_at' => time(),
+              'update_at' => time()
           )
         );
     }
