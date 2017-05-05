@@ -6,7 +6,7 @@ class CommunityController extends Controller
 {
     public function index()
     {
-        $communities = $this->getService('CommunityService')->find_communities();
+        $communities = $this->getService('CommunityService')->search_communities(1);
         return view('community.index', compact('communities'));
     }
 }

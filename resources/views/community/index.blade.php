@@ -4,6 +4,10 @@
 
 @define $site = 'community';
 
+@section('page-css')
+    <link rel="stylesheet" href="/css/app.css">
+@endsection
+
 @section('content-header')
     <h1>
         社团管理
@@ -31,4 +35,7 @@
         @endforeach
         </tbody>
     </table>
+    <div class="paginator-center">
+        {{ $communities->links() }}
+    </div>
 @endsection

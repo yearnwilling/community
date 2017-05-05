@@ -1,5 +1,8 @@
 var elixir = require('laravel-elixir');
 var gulp = require('gulp');
+var sass = require('gulp-sass');
+var watch = require('gulp-watch');
+var Task = elixir.Task;
 
 /*
  |--------------------------------------------------------------------------
@@ -11,6 +14,9 @@ var gulp = require('gulp');
  | file for our application, as well as publishing vendor resources.
  |
  */
+
+var sass_path = 'resources/assets/sass/app/';
+
 gulp.task("copyfiles", function() {
     gulp.src("vendor/almasaeed2010/adminlte/dist/css/AdminLTE.min.css")
         .pipe(gulp.dest("public/assets/css"));
@@ -30,10 +36,20 @@ gulp.task("copyfiles", function() {
         .pipe(gulp.dest("public/assets/img"));
 });
 
-elixir(function(mix) {
-    mix.sass('app.scss')
-        .browserify('app.js');
+elixir.extend('app_sass', function() {
+    new Task('app_sass', function() {
+        gulp.src(sass_path+'**/*.scss')
+            .pipe(sass())
+            .pipe(gulp.dest('public/css'));
+    });
 
+});
+
+elixir(function(mix) {
+    mix.sass(['app.scss',])
+        .browserify('app.js');
+    //
+    mix.app_sass();
     mix.styles([
         '../assets/css/bootstrap.min.css',
         '../assets/css/AdminLTE.min.css',
@@ -46,3 +62,15 @@ elixir(function(mix) {
     ], './public/js/vendor.js', './public/js');
 
 });
+
+
+
+gulp.task('app_sass', function() {
+    gulp.src(sass_path+'**/*.scss')
+        .pipe(sass())
+        .pipe(gulp.dest('public/css'));
+});
+
+
+
+

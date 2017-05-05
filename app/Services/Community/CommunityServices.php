@@ -26,4 +26,9 @@ class CommunityServices extends BaseServices
     {
         return $this->getRepository('CommunityRepository')->getAll(array('president', 'communityType'));
     }
+
+    public function search_communities($pageNumber)
+    {
+        return $this->getRepository('CommunityRepository')->search($pageNumber);
+    }
 }

@@ -26,4 +26,9 @@ class CommunityRepository extends BaseRepository
     {
         return $this->model->with($preload)->get();
     }
+
+    public function search($pageNumber = 10, $preload = array())
+    {
+        return $this->model->with($preload)->paginate($pageNumber);
+    }
 }
