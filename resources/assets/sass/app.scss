@@ -7,3 +7,8 @@ $icon-font-path: '/assets/fonts/';
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
+
+.custom-button {
+  padding-bottom: 10px;
+  text-align: center;
+}

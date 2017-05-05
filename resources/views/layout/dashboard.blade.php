@@ -38,7 +38,7 @@ desired effect
                         <li><a href="#"><i class="glyphicon glyphicon-home"></i><span>主页</span></a></li>
                         @if ( Auth::user()->isAdmin())
                         <li @if ( isset($site) ?  $site : ''  === 'community') class="active" @endif>
-                            <a href="#"><i class="fa fa-street-view"></i> <span>社团列表</span></a>
+                            <a href="{{ route('community_index') }}"><i class="fa fa-street-view"></i> <span>社团列表</span></a>
                         </li>
                         @endif
                         <li class="treeview">

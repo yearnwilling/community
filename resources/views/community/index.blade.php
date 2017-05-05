@@ -5,16 +5,20 @@
 @define $site = 'community';
 
 @section('page-css')
-    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/community/community.css">
 @endsection
 
 @section('content-header')
     <h1>
-        社团管理
+        社团列表
     </h1>
+
 @endsection
 
 @section('content-body-boxed')
+    <div class="col-md-2 custom-button">
+        <button type="button" class="btn btn-block btn-success btn-sm"><i class="glyphicon glyphicon-plus"></i>添加</button>
+    </div>
     <table class="table table-hover">
         <tbody>
         <tr>
