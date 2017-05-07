@@ -25,4 +25,8 @@ class CommunityPolicy
         return $user->isAdmin();
     }
 
+    public function create(User $user)
+    {
+        return $user->isAdmin();
+    }
 }

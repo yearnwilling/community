@@ -9,4 +9,9 @@ class CommunityController extends Controller
         $communities = $this->getService('CommunityService')->search_communities(1);
         return view('community.index', compact('communities'));
     }
+
+    public function create()
+    {
+        return view('community.add');
+    }
 }

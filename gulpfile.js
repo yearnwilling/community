@@ -2,6 +2,7 @@ var elixir = require('laravel-elixir');
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var watch = require('gulp-watch');
+var minify = require('gulp-minify');
 var Task = elixir.Task;
 
 /*
@@ -16,6 +17,7 @@ var Task = elixir.Task;
  */
 
 var sass_path = 'resources/assets/sass/app/';
+var js_path = 'resources/assets/js/app/';
 
 gulp.task("copyfiles", function() {
     gulp.src("vendor/almasaeed2010/adminlte/dist/css/AdminLTE.min.css")
@@ -45,11 +47,21 @@ elixir.extend('app_sass', function() {
 
 });
 
+elixir.extend('app_js', function() {
+    new Task('app_js', function() {
+        gulp.src(js_path+'**/*.js')
+            .pipe(minify())
+            .pipe(gulp.dest('public/js'));
+    });
+});
+
 elixir(function(mix) {
     mix.sass(['app.scss',])
         .browserify('app.js');
     //
     mix.app_sass();
+    mix.app_js();
+
     mix.styles([
         '../assets/css/bootstrap.min.css',
         '../assets/css/AdminLTE.min.css',
