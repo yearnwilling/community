@@ -2,7 +2,7 @@ import jquery from 'jquery';
 
 window.$ = window.jQuery = jquery;
 
-require ('./libs/jquery-validate.js');
+// require ('./libs/jquery-validate.js');
 
 $(document).ready(function () {
     $('#modal').on('show.bs.modal', function (e) {

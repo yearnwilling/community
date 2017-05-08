@@ -1,3 +1,7 @@
+import jquery from 'jquery';
+
+window.$ = window.jQuery = jquery;
+
 require ('jquery-validation/dist/jquery.validate.js');
 
 $.validator.setDefaults({

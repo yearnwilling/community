@@ -32,5 +32,5 @@
 @endsection
 
 @section('modal_js')
-    <script src="/js/add.js"></script>
+    <script src="/js/app/community/add.js"></script>
 @endsection

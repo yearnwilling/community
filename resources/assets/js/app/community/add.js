@@ -1,4 +1,4 @@
-// require ('../../libs/jquery-validate.js');
+require ('../../libs/jquery-validate.js');
 
 $("#community_add").validate({
     debug: true,

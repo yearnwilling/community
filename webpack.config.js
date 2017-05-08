@@ -4,6 +4,8 @@ const path = require("path");
 const fs = require('fs');
 
 let entryName = getEntry();
+let baseEntry = {'vendor': ['../../../public/assets/js/app.min.js', '../../../public/assets/js/bootstrap.min.js']};
+entryName = mergeMap(entryName, baseEntry);
 
 module.exports = {
     context: __dirname + "/resources/assets/js",
@@ -26,13 +28,13 @@ module.exports = {
             // Loaders for other file types can go here
         ],
     },
-    plugins: [
-        new webpack.optimize.CommonsChunkPlugin({
-            name: "commons",
-            filename: "commons.js",
-            minChunks: 2,
-        }),
-    ],
+    // plugins: [
+    //     new webpack.optimize.CommonsChunkPlugin({
+    //         name: "commons",
+    //         filename: "commons.js",
+    //         minChunks: 2,
+    //     }),
+    // ],
 };
 
 function getEntry() {
