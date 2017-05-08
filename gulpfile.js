@@ -66,11 +66,11 @@ elixir.extend('libs_js', function() {
 
 elixir(function(mix) {
     mix.sass(['app.scss',])
-        .browserify('app.js');
+        // .browserify('app.js');
     //
     // mix.app_js();
-    mix.browserify('libs/jquery-validate.js','./public/js/libs/jquery-validate.js');
-    mix.browserify('app/community/add.js','./public/js/community/add.js');
+    // mix.browserify('libs/jquery-validate.js','./public/js/libs/jquery-validate.js');
+    // mix.browserify('app/community/add.js','./public/js/community/add.js');
     mix.app_sass();
 
     mix.styles([
@@ -79,10 +79,10 @@ elixir(function(mix) {
         '../assets/css/skin-blue.min.css',
     ], './public/css/vendor.css', './public/css');
 
-    mix.scripts([
-        '../assets/js/app.min.js',
-        '../assets/js/bootstrap.min.js',
-    ], './public/js/vendor.js', './public/js');
+    // mix.scripts([
+    //     '../assets/js/app.min.js',
+    //     '../assets/js/bootstrap.min.js',
+    // ], './public/js/vendor.js', './public/js');
 
 });
 
