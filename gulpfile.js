@@ -18,6 +18,7 @@ var Task = elixir.Task;
 
 var sass_path = 'resources/assets/sass/app/';
 var js_path = 'resources/assets/js/app/';
+var libs_path = 'resources/assets/js/libs/';
 
 gulp.task("copyfiles", function() {
     gulp.src("vendor/almasaeed2010/adminlte/dist/css/AdminLTE.min.css")
@@ -55,12 +56,22 @@ elixir.extend('app_js', function() {
     });
 });
 
+elixir.extend('libs_js', function() {
+    new Task('libs_js', function() {
+        gulp.src(libs_path+'**/*.js')
+            .pipe(minify())
+            .pipe(gulp.dest('public/js'));
+    });
+});
+
 elixir(function(mix) {
     mix.sass(['app.scss',])
         .browserify('app.js');
     //
+    // mix.app_js();
+    mix.browserify('libs/jquery-validate.js','./public/js/libs/jquery-validate.js');
+    mix.browserify('app/community/add.js','./public/js/community/add.js');
     mix.app_sass();
-    mix.app_js();
 
     mix.styles([
         '../assets/css/bootstrap.min.css',

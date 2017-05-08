@@ -19,6 +19,13 @@
     <div class="col-md-2 custom-button">
         <a type="button" data-url="{{ route('community_create') }}" class="btn btn-block btn-success btn-sm" data-toggle="modal" data-target="#modal"><i class="glyphicon glyphicon-plus"></i>添加</a>
     </div>
+    <form id="community_add" action="" method="post">
+        <div class="form-group">
+            <label for="name">社团名称</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="名称">
+        </div>
+        <button type="submit" class="btn btn-primary show-primary" value="111">保存</button>
+    </form>
     <table class="table table-hover">
         <tbody>
         <tr>
