@@ -32,6 +32,5 @@
 @endsection
 
 @section('modal_js')
-    {{--<script src="/js/libs/jquery-validate.js"></script>--}}
-    <script src="/js/community/add.js"></script>
+    <script src="/js/add.js"></script>
 @endsection

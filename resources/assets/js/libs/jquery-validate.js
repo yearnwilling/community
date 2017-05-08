@@ -1,4 +1,4 @@
-import 'jquery-validation/dist/jquery.validate.js';
+require ('jquery-validation/dist/jquery.validate.js');
 
 $.validator.setDefaults({
     submitHandler: function() {
