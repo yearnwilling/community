@@ -29,7 +29,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <body class="hold-transition skin-blue sidebar-mini">
     @yield('content')
     {{--存在js域问题，请务必现在加载appjs--}}
-    {{--<script src="/js/commons.js"></script>--}}
+    <script src="/js/commons.js"></script>
     <script src="/js/app.js"></script>
     <script src="/js/vendor.js"></script>
 
