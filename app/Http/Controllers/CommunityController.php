@@ -12,6 +12,7 @@ class CommunityController extends Controller
 
     public function create()
     {
-        return view('community.add');
+        $communityTypes = $this->getService('CommunityTypeService')->find_community_type();
+        return view('community.add', compact('communityTypes'));
     }
 }

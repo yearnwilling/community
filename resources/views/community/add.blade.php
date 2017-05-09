@@ -10,17 +10,14 @@
             <label for="name">社团名称</label>
             <input type="text" class="form-control" id="name" name="name" placeholder="名称">
         </div>
-        {{--<div class="form-group">--}}
-            {{--<label for="type">Select</label>--}}
-            {{--<select class="form-control" id="type" >--}}
-                {{--<option value="1">option 1</option>--}}
-                {{--<option value="2">option 2</option>--}}
-                {{--<option value="3">option 3</option>--}}
-                {{--<option value="4">option 4</option>--}}
-                {{--<option value="5">option 5</option>--}}
-            {{--</select>--}}
-        {{--</div>--}}
-
+        <div class="form-group">
+            <label for="type">社团分类</label>
+            <select class="form-control" id="type" >
+                @foreach($communityTypes as $communityType)
+                    <option value="{{$communityType->id}}">{{$communityType->name}}</option>
+                @endforeach
+            </select>
+        </div>
     </form>
 
 
