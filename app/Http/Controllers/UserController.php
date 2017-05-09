@@ -44,6 +44,11 @@ class UserController extends Controller
         return redirect(route('admin_login'));
     }
 
+    public function president()
+    {
+
+    }
+
     protected function checkAuth($credential_email, $credential_name, $hasRemember)
     {
         return Auth::attempt($credential_email, $hasRemember) || Auth::attempt($credential_name, $hasRemember);

@@ -18,7 +18,7 @@ class Controller extends BaseController
 
     protected $resourcesNames = array(
         'CommunityService' => 'Community\CommunityServices',
-        'CommunityTypeService' => 'Community\CommunityTypeServices'
+        'CommunityTypeService' => 'Community\CommunityTypeServices',
     );
 
     public function __construct(Service $baseServices)

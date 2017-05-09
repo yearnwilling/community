@@ -5,7 +5,7 @@
 @endsection
 
 @section('modal_body')
-    <form id="community_add" action="" method="post">
+    <form id="community_add" action="{{ route('community_create') }}" method="post">
         <div class="form-group">
             <label for="name">社团名称</label>
             <input type="text" class="form-control" id="name" name="name" placeholder="名称">
@@ -17,6 +17,11 @@
                     <option value="{{$communityType->id}}">{{$communityType->name}}</option>
                 @endforeach
             </select>
+        </div>
+        <div class="form-group">
+            <label for="president_id">社长</label>
+            <input type="text" class="form-control" id="users" placeholder="社长"  autocomplete="off">
+            <input type="text" class="form-control hidden" id="president_id" name="president_id" placeholder="社长"  autocomplete="off">
         </div>
     </form>
 
