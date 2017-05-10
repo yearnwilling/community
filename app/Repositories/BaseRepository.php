@@ -19,6 +19,9 @@ abstract class BaseRepository extends Repository
 
     public function model()
     {
+        if ($this->modelName == 'User') {
+            return 'App\\'.$this->modelName();
+        }
         return $this->modelsPath.$this->modelName();
     }
 

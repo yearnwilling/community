@@ -46,7 +46,7 @@ class UserController extends Controller
 
     public function president()
     {
-
+        return $this->getService('UserService')->getPresidents();
     }
 
     protected function checkAuth($credential_email, $credential_name, $hasRemember)
