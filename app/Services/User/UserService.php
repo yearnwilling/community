@@ -20,9 +20,9 @@ class UserService extends BaseServices
         );
     }
 
-    public function getPresidents()
+    public function searchPresidents($fields)
     {
-        return $this->getRepository('UserRepository')->getByRoles('super_admin');
+        return $this->getRepository('UserRepository')->findByFields($fields);
     }
 
 }

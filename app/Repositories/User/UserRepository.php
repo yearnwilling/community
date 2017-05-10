@@ -15,8 +15,18 @@ class UserRepository extends BaseRepository
 {
     protected $modelName = 'User';
 
-    public function getByRoles($roles)
+    public function findByFields($fields)
     {
-        return $this->model->where('roles', '=', $roles)->get();
+        $builder =  $this->model;
+        foreach ($fields as $key => $value) {
+            $builder = $this->searchWhere($builder,$key,$value);
+        }
+        return $builder->get();
+    }
+
+    public function searchWhere($builder ,$key, $value)
+    {
+        $conditions = explode(' ', trim($value), 2);
+        return $builder->where($key , $conditions[0], $conditions[1]);
     }
 }

@@ -17,19 +17,19 @@ $('#community_add_submit').on('click', function () {
 });
 
 $('#users').autocomplete({
-        valueKey: 'title',
-        titleKey: 'title',
+        valueKey: 'name',
+        titleKey: 'name',
         source: [{
-            url: "http://xdsoft.net/jquery-plugins/?task=demodata&s=%QUERY%",
+            url: "/president_search?name=%QUERY%",
             type: 'remote',
             getValue: function (item) {
-                return item.title
+                return item.name
             },
             getTitle: function (item) {
-                return item.id
+                return item.name
             },
             ajax: {
-                dataType: 'jsonp'
+                dataType: 'json'
             }
         }]
     }

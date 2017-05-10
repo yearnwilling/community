@@ -21,11 +21,11 @@ class UserController extends Controller
     public function store(AdminLoginPost $request)
     {
         $credential_email = array(
-            'email'    => $request->email,
+            'email' => $request->email,
             'password' => $request->password,
         );
         $credential_name = array(
-            'name'    => $request->email,
+            'name' => $request->email,
             'password' => $request->password,
         );
 
@@ -44,9 +44,13 @@ class UserController extends Controller
         return redirect(route('admin_login'));
     }
 
-    public function president()
+    public function president_search(Request $request)
     {
-        return $this->getService('UserService')->getPresidents();
+        $fields = array(
+            'name' => "like %$request->name%",
+            'roles' => '= user'
+        );
+        return $this->getService('UserService')->searchPresidents($fields);
     }
 
     protected function checkAuth($credential_email, $credential_name, $hasRemember)
