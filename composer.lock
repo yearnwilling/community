@@ -1910,12 +1910,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yearnwilling/Repository-Services.git",
-                "reference": "f66a275785b5378e21587b904a0da7f2656dd8ac"
+                "reference": "4ad7486fe8f0fe57a3a10714d0b10fdad23a3894"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yearnwilling/Repository-Services/zipball/f66a275785b5378e21587b904a0da7f2656dd8ac",
-                "reference": "f66a275785b5378e21587b904a0da7f2656dd8ac",
+                "url": "https://api.github.com/repos/yearnwilling/Repository-Services/zipball/4ad7486fe8f0fe57a3a10714d0b10fdad23a3894",
+                "reference": "4ad7486fe8f0fe57a3a10714d0b10fdad23a3894",
                 "shasum": ""
             },
             "require": {
@@ -1948,7 +1948,7 @@
                 "source": "https://github.com/yearnwilling/Repository-Services/tree/master",
                 "issues": "https://github.com/yearnwilling/Repository-Services/issues"
             },
-            "time": "2017-05-11T01:41:19+00:00"
+            "time": "2017-05-11T02:24:17+00:00"
         }
     ],
     "packages-dev": [

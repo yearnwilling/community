@@ -23,9 +23,8 @@
             <input type="text" class="form-control" id="users" placeholder="社长"  autocomplete="off">
             <input type="text" class="form-control hidden" id="president_id" name="president_id" placeholder="社长"  autocomplete="off">
         </div>
+        {{ csrf_field() }}
     </form>
-
-
 @endsection()
 
 @section('modal_footer')

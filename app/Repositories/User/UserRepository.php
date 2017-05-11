@@ -18,15 +18,7 @@ class UserRepository extends BaseRepository
     public function findByFields($fields)
     {
         $builder =  $this->model;
-        foreach ($fields as $key => $value) {
-            $builder = $this->searchWhere($builder,$key,$value);
-        }
+        $builder = $this->wheres($builder, $fields);
         return $builder->get();
-    }
-
-    public function searchWhere($builder ,$key, $value)
-    {
-        $conditions = explode(' ', trim($value), 2);
-        return $builder->where($key , $conditions[0], $conditions[1]);
     }
 }

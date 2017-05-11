@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+
 class CommunityController extends Controller
 {
     public function index()
@@ -16,4 +18,9 @@ class CommunityController extends Controller
         return view('community.add', compact('communityTypes'));
     }
 
+    public function store(Request $request)
+    {
+        var_dump($request->toArray());
+        exit();
+    }
 }
