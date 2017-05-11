@@ -25,8 +25,10 @@ abstract class BaseRepository extends Repository
         return $this->modelsPath.$this->modelName();
     }
 
-    function modelName()
+    public function modelName()
     {
         return $this->modelName;
     }
+
+
 }
