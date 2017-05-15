@@ -8,7 +8,7 @@ class CommunityController extends Controller
 {
     public function index()
     {
-        $communities = $this->getService('CommunityService')->search_communities(1);
+        $communities = $this->getService('CommunityService')->search_communities(10);
         return view('community.index', compact('communities'));
     }
 
@@ -20,7 +20,7 @@ class CommunityController extends Controller
 
     public function store(Request $request)
     {
-        var_dump($request->toArray());
-        exit();
+        $this->getService('CommunityService')->create_community($request->toArray());
+        return back()->with('success', '添加成功');
     }
 }

@@ -31,4 +31,9 @@ class CommunityServices extends BaseServices
     {
         return $this->getRepository('CommunityRepository')->search($pageNumber);
     }
+
+    public function create_community($community)
+    {
+        return $this->getRepository('CommunityRepository')->create($community);
+    }
 }

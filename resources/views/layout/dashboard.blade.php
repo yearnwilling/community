@@ -63,6 +63,7 @@ desired effect
         @section('content-wrapper')
             <!-- Content Header (Page header) -->
                 <section class="content-header">
+                    @include('layout.alter-msg')
                     @section('content-header')
                         <h1>
                             Page Header

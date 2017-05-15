@@ -12,7 +12,7 @@
         </div>
         <div class="form-group">
             <label for="type">社团分类</label>
-            <select class="form-control" id="type" >
+            <select class="form-control" id="type" name="community_type_id">
                 @foreach($communityTypes as $communityType)
                     <option value="{{$communityType->id}}">{{$communityType->name}}</option>
                 @endforeach

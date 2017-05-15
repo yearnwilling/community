@@ -31,4 +31,10 @@ class CommunityRepository extends BaseRepository
     {
         return $this->model->with($preload)->paginate($pageNumber);
     }
+
+    public function create($community)
+    {
+        return $this->model->create($community);
+    }
+
 }
