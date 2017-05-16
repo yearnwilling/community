@@ -13,8 +13,17 @@ $("#community_add").validate({
                 notify.success(data.msg);
                 setTimeout('window.location.reload()',2000);
             },
-            error : function (data) {
-                notify.danger(data.msg,3);
+            error : function (res) {
+                if (res.status == 422) {
+                    let errors = res.responseJSON;
+                    let errorMsg = '';
+                    $.each(errors, function (key, value) {
+                        errorMsg += value +'';
+                    })
+                    notify.danger(errorMsg,3);
+                } else {
+
+                }
             }
         };
         $(form).ajaxSubmit(options);
