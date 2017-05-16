@@ -25,6 +25,7 @@ class CommunityPost extends FormRequest
     public function rules()
     {
         return [
+            'name' => 'required|unique:community,name',
             'president_id' => 'required|exists:community_type,id'
         ];
     }
@@ -32,6 +33,8 @@ class CommunityPost extends FormRequest
     public function messages()
     {
         return [
+            'name.required' => '社团名称不能为空',
+            'name.unique' => '社团名称已存在',
             'president_id.required' => '该用户不存在',
             'president_id.exists' => '该用户不存在',
         ];
