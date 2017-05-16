@@ -34,7 +34,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div id="modal" class="modal fade" name="tip-modal" data-backdrop="static" data-keyboard="false"></div>
     <script src="/js/commons.js"></script>
     <script src="/js/app.js"></script>
-    <script src="/js/vendor.js"></script>
+    {{--<script src="/js/vendor.js"></script>--}}
 </body>
 
 </html>

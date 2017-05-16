@@ -4,9 +4,9 @@ const path = require("path");
 const fs = require('fs');
 
 let entryName = getEntry();
-let baseEntry = {'vendor': ['../../../public/assets/js/app.min.js', '../../../public/assets/js/bootstrap.min.js']};
-entryName = mergeMap(entryName, baseEntry);
-let moduleChunk = ['app', 'vendor'];
+// let baseEntry = {'vendor': ['../../../public/assets/js/app.min.js', '../../../public/assets/js/bootstrap.min.js']};
+// entryName = mergeMap(entryName, baseEntry);
+let moduleChunk = ['app'];
 
 module.exports = {
     context: __dirname + "/resources/assets/js",
@@ -29,20 +29,27 @@ module.exports = {
                 test: /\.css$/,
                 use: ["style-loader", "css-loader"],
             },
-
             // Loaders for other file types can go here
         ],
+        loaders: [
+            {
+                test: require.resolve("jquery"),
+                loader: 'expose?$!expose?jQuery', // 先把jQuery对象声明成为全局变量`jQuery`，再通过管道进一步又声明成为全局变量`$`
+            }
+        ]
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
             name: "commons",
             filename: "commons.js",
-            minChunks: 2,
-            chunks: moduleChunk,
+            minChunks: 3,
+            // chunks: moduleChunk,
         }),
         new webpack.ProvidePlugin({
-            $: "jquery",
-            jQuery: "jquery"
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery',
+            'window.$': 'jquery',
         }),
     ],
 };

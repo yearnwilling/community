@@ -26,7 +26,7 @@ class CommunityPost extends FormRequest
     {
         return [
             'name' => 'required|unique:community,name',
-            'president_id' => 'required|exists:community_type,id'
+            'president_id' => 'required|exists:users,id'
         ];
     }
 
