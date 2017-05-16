@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Exceptions\ServiceException;
+use App\Http\Requests\CommunityPost;
 use Illuminate\Http\Request;
 
 class CommunityController extends Controller
@@ -19,7 +20,7 @@ class CommunityController extends Controller
         return view('community.add', compact('communityTypes'));
     }
 
-    public function store(Request $request)
+    public function store(CommunityPost $request)
     {
         $this->getService('CommunityService')->create_community($request->toArray());
         return back()->with('success', '添加成功');

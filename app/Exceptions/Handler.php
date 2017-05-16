@@ -48,7 +48,7 @@ class Handler extends ExceptionHandler
             $errors = $exception->getMessage();
             return redirect()->back()->withInput(
                 $request->input()
-            )->withErrors($errors,'ServiceError');
+            )->withErrors(array('ServiceError' => $errors));
         }
         return parent::render($request, $exception);
     }
