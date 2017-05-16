@@ -1,6 +1,7 @@
 import styles from 'jquery-autocomplete/jquery.autocomplete.css';
 
 require('../../libs/jquery-validate.js');
+require('jquery-form');
 require('jquery-autocomplete/jquery.autocomplete.js');
 
 $("#community_add").validate({

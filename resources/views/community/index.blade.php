@@ -35,7 +35,7 @@
                 <td>{{ $community->president->name }}</td>
                 <td>{{ $community->communityType->name }}</td>
                 <td>
-                    <a class="btn btn-default btn-sm" href="#"><i class="fa fa-edit"></i>编辑</a>
+                    <a class="btn btn-default btn-sm" data-url="{{ route('community_create') }}" data-toggle="modal" data-target="#modal"><i class="fa fa-edit"></i>编辑</a>
                 </td>
             </tr>
         @endforeach

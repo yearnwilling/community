@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exceptions\ServiceException;
 use Illuminate\Http\Request;
 
 class CommunityController extends Controller

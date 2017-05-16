@@ -44,6 +44,12 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        if ($exception instanceof ServiceException) {
+            $errors = $exception->getMessage();
+            return redirect()->back()->withInput(
+                $request->input()
+            )->withErrors($errors,'ServiceError');
+        }
         return parent::render($request, $exception);
     }
 
