@@ -23,6 +23,6 @@ class CommunityController extends Controller
     public function store(CommunityPost $request)
     {
         $this->getService('CommunityService')->create_community($request->toArray());
-        return back()->with('success', '添加成功');
+        return response()->json(array('status' =>  200 , 'msg' => '添加成功'));
     }
 }

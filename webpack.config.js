@@ -37,8 +37,12 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin({
             name: "commons",
             filename: "commons.js",
-            minChunks: 3,
+            minChunks: 2,
             chunks: moduleChunk,
+        }),
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
         }),
     ],
 };

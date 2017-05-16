@@ -6,7 +6,19 @@ require('jquery-form');
 require('jquery-autocomplete/jquery.autocomplete.js');
 
 $("#community_add").validate({
-
+    submitHandler: function (form) {
+        let options = {
+            success: function (data) {
+                $('#modal').modal('hide');
+                notify.success(data.msg);
+                setTimeout('window.location.reload()',2000);
+            },
+            error : function (data) {
+                notify.danger(data.msg,3);
+            }
+        };
+        $(form).ajaxSubmit(options);
+    },
     rules: {
         name: "required",
     },

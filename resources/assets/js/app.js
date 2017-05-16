@@ -1,6 +1,7 @@
-import jquery from 'jquery';
+// import $ from 'jquery';
+// import jQuery from 'jquery';
 
-window.$ = window.jQuery = jquery;
+// window.$ = window.jQuery = $;
 
 $(document).ready(function () {
     $('#modal').on('show.bs.modal', function (e) {
@@ -20,4 +21,6 @@ $(document).ready(function () {
             // }
         });
     });
+
+
 });
