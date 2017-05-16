@@ -1,10 +1,12 @@
-import styles from 'jquery-autocomplete/jquery.autocomplete.css';
+import 'jquery-autocomplete/jquery.autocomplete.css';
+import notify from '../../libs/notify';
 
 require('../../libs/jquery-validate.js');
 require('jquery-form');
 require('jquery-autocomplete/jquery.autocomplete.js');
 
 $("#community_add").validate({
+
     rules: {
         name: "required",
     },
@@ -36,4 +38,4 @@ $('#users').autocomplete({
     }
 ).on('selected.xdsoft',function(e,datum){
     $('#president_id').val(datum.id)
-});;
+});
