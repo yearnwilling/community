@@ -16,6 +16,11 @@ module.exports = {
         publicPath: '/public/js',
         filename: "[name].js",
     },
+    resolve: {
+        alias: {
+            nodeModulesDir: path.resolve(__dirname, 'node_modules'),
+        },
+    },
     module: {
         rules: [
             {

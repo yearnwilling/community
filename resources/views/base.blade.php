@@ -30,10 +30,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
     @yield('content')
     {{--存在js域问题，请务必现在加载appjs--}}
 
-    @yield('page-js')
-    <div id="modal" class="modal fade" name="tip-modal" data-backdrop="static" data-keyboard="false"></div>
     <script src="/js/commons.js"></script>
+    <div id="modal" class="modal fade" name="tip-modal" data-backdrop="static" data-keyboard="false"></div>
     <script src="/js/app.js"></script>
+    @yield('page-js')
+
     {{--<script src="/js/vendor.js"></script>--}}
 </body>
 

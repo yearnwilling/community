@@ -46,3 +46,7 @@
     </div>
 
 @endsection
+
+@section('page-js')
+    <script type="application/javascript" src="/js/app/community/index.js"></script>
+@endsection

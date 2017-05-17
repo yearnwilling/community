@@ -66,6 +66,7 @@ let selectize_options = {
         });
     }
 };
+
 $('#users').selectize(selectize_options);
 
 
