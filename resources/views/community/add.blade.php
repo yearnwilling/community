@@ -18,10 +18,15 @@
                 @endforeach
             </select>
         </div>
+        {{--<div class="form-group">--}}
+            {{--<label for="president_id">社长</label>--}}
+            {{--<input type="text" class="form-control" id="users" placeholder="社长"  autocomplete="off">--}}
+            {{--<input type="text" class="form-control hidden" id="president_id" name="president_id" placeholder="社长"  autocomplete="off">--}}
+        {{--</div>--}}
         <div class="form-group">
             <label for="president_id">社长</label>
-            <input type="text" class="form-control" id="users" placeholder="社长"  autocomplete="off">
-            <input type="text" class="form-control hidden" id="president_id" name="president_id" placeholder="社长"  autocomplete="off">
+            <select id="users" name="president_id" placeholder="请选择社长...">
+            </select>
         </div>
         {{ csrf_field() }}
     </form>
