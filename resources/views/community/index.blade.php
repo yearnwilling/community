@@ -44,9 +44,8 @@
     <div class="paginator-center">
         {{ $communities->links() }}
     </div>
-
 @endsection
 
 @section('page-js')
-    <script type="application/javascript" src="/js/app/community/index.js"></script>
+    <script type="text/javascript" src="/js/app/community/index.js"></script>
 @endsection

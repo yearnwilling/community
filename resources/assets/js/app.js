@@ -7,7 +7,7 @@ $('#modal').on('show.bs.modal', function (e) {
     $(this).load($(e.relatedTarget).data('url'));
 });
 //
-$("#modal").on('hide.bs.modal',function(e){
-    // $(this).removeData();
-    console.log(111);
+$("#modal").on('hidden.bs.modal',function(e){
+    $(this).removeData("bs.modal");
+    $("#modal").empty();
 });
