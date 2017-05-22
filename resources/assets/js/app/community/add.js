@@ -10,9 +10,10 @@ $("#community_add").validate({
     submitHandler: function (form) {
         let options = {
             success: function (data) {
-                $('#modal').modal('hide');
                 notify.success(data.msg);
-                setTimeout('window.location.reload()',2000);
+                let success_url =  $('#community_add_submit').data("success-url");
+                console.log(success_url);
+                setTimeout('window.location.assign("'+success_url+'")',2000);
             },
             error : function (res) {
                 if (res.status == 422) {

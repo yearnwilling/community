@@ -17,7 +17,7 @@
 
 @section('content-body-boxed')
     <div class="col-md-2 custom-button">
-        <a type="button" data-url="{{ route('community_create') }}" class="btn btn-block btn-success btn-sm" data-toggle="modal" data-target="#modal"><i class="glyphicon glyphicon-plus"></i>添加</a>
+        <a type="button" href="{{ route('community_create') }}" class="btn btn-block btn-success btn-sm"><i class="glyphicon glyphicon-plus"></i>添加</a>
     </div>
     <table class="table table-hover">
         <tbody>
