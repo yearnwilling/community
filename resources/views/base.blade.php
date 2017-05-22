@@ -15,10 +15,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="/css/app.css">
     @yield('page-css')
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    {{--<!-- Font Awesome -->--}}
+    {{--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">--}}
+    {{--<!-- Ionicons -->--}}
+    {{--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">--}}
 
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -30,7 +30,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     @yield('content')
     {{--存在js域问题，请务必现在加载appjs--}}
 
-    <script src="/js/commons.js"></script>
+    {{--<script src="/js/commons.js"></script>--}}
+    <script type="text/javascript" src="{{ asset('js/commons.js') }}"></script>
     <div id="modal" class="modal fade" name="tip-modal" data-backdrop="static" data-keyboard="false"></div>
     <script src="/js/app.js"></script>
     @yield('page-js')

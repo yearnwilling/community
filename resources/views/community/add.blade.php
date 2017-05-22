@@ -4,7 +4,10 @@
     添加社团
 @endsection
 
+
 @section('modal_body')
+    @jsload('/js/app/community/add.js')
+
     <form id="community_add" action="{{ route('community_create') }}" method="post">
         <div class="form-group">
             <label for="name">社团名称</label>
@@ -38,5 +41,8 @@
 @endsection
 
 @section('modal_js')
-    <script src="/js/app/community/add.js"></script>
+    {{--<script src="/js/app/community/add.js"></script>--}}
+    <script type="text/javascript" src="{{ asset('/js/app/community/add.js') }}"></script>
+    <script>
+    </script>
 @endsection

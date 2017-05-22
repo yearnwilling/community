@@ -60,7 +60,6 @@ let selectize_options = {
                 callback();
             },
             success: function(res) {
-                console.log(res);
                 callback(res);
             }
         });

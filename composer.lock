@@ -277,16 +277,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.4.22",
+            "version": "v5.4.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "fc5c7a18644f231bcb8d02f4ec2f3a2517f5015d"
+                "reference": "ad82327705658dbf5f0ce72805caa950dfbe150d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/laravel/framework/fc5c7a18644f231bcb8d02f4ec2f3a2517f5015d.zip",
-                "reference": "fc5c7a18644f231bcb8d02f4ec2f3a2517f5015d",
+                "url": "https://files.phpcomposer.com/files/laravel/framework/ad82327705658dbf5f0ce72805caa950dfbe150d.zip",
+                "reference": "ad82327705658dbf5f0ce72805caa950dfbe150d",
                 "shasum": ""
             },
             "require": {
@@ -402,7 +402,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-05-08T21:45:45+00:00"
+            "time": "2017-05-11T20:10:35+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -868,16 +868,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.8.3",
+            "version": "v0.8.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "1dd4bbbc64d71e7ec075ffe82b42d9e096dc8d5e"
+                "reference": "38a9d21406597a0440690eafbcb0222f528c8ac6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/bobthecow/psysh/1dd4bbbc64d71e7ec075ffe82b42d9e096dc8d5e.zip",
-                "reference": "1dd4bbbc64d71e7ec075ffe82b42d9e096dc8d5e",
+                "url": "https://files.phpcomposer.com/files/bobthecow/psysh/38a9d21406597a0440690eafbcb0222f528c8ac6.zip",
+                "reference": "38a9d21406597a0440690eafbcb0222f528c8ac6",
                 "shasum": ""
             },
             "require": {
@@ -937,7 +937,7 @@
                 "interactive",
                 "shell"
             ],
-            "time": "2017-03-19T21:40:44+00:00"
+            "time": "2017-05-17T06:49:19+00:00"
         },
         {
             "name": "ramsey/uuid",
@@ -1910,12 +1910,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yearnwilling/Repository-Services.git",
-                "reference": "4ad7486fe8f0fe57a3a10714d0b10fdad23a3894"
+                "reference": "d355b6304d21309aadca8bf1a4a5a252e91b105d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yearnwilling/Repository-Services/zipball/4ad7486fe8f0fe57a3a10714d0b10fdad23a3894",
-                "reference": "4ad7486fe8f0fe57a3a10714d0b10fdad23a3894",
+                "url": "https://api.github.com/repos/yearnwilling/Repository-Services/zipball/d355b6304d21309aadca8bf1a4a5a252e91b105d",
+                "reference": "d355b6304d21309aadca8bf1a4a5a252e91b105d",
                 "shasum": ""
             },
             "require": {
@@ -1948,7 +1948,7 @@
                 "source": "https://github.com/yearnwilling/Repository-Services/tree/master",
                 "issues": "https://github.com/yearnwilling/Repository-Services/issues"
             },
-            "time": "2017-05-11T02:24:17+00:00"
+            "time": "2017-05-18T09:47:21+00:00"
         }
     ],
     "packages-dev": [

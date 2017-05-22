@@ -37,6 +37,13 @@ module.exports = {
             {
                 test: /\.less$/,
                 use: ["style-loader", "css-loader", "less-loader"]
+            },
+            {
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                use: [
+                    'url-loader?limit=10000',
+                    'img-loader'
+                ]
             }
 
             // Loaders for other file types can go here
