@@ -25,4 +25,21 @@ class CommunityController extends Controller
         $this->getService('CommunityService')->create_community($request->toArray());
         return response()->json(array('status' =>  200 , 'msg' => '添加成功'));
     }
+
+    public function edit($communityId)
+    {
+        $community = $this->getService('CommunityService')->getCommunity($communityId);
+        $communityTypes = $this->getService('CommunityTypeService')->find_community_type();
+        return view('community.add', array_merge(
+            compact('communityTypes'),
+            compact('community'),
+             array('type' => 'edit')   )
+        );
+    }
+
+    public function update(CommunityPost $request, $communityId)
+    {
+        var_dump($communityId);
+        throw new \Exception('111');
+    }
 }

@@ -36,4 +36,9 @@ class CommunityServices extends BaseServices
     {
         return $this->getRepository('CommunityRepository')->create($community);
     }
+
+    public function getCommunity($communityId)
+    {
+        return $this->getRepository('CommunityRepository')->get($communityId, array('president'));
+    }
 }

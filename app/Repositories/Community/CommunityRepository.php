@@ -32,4 +32,9 @@ class CommunityRepository extends BaseRepository
         return $this->model->with($preload)->paginate($pageNumber);
     }
 
+    public function get($id, $preload = array())
+    {
+        return $this->model->with($preload)->where('id', '=', $id)->firstOrFail();
+    }
+
 }

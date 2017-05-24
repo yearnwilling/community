@@ -26,4 +26,6 @@ Route::group(array('prefix' => 'admin', 'middleware' => 'auth'), function ()
     Route::get('/community', 'CommunityController@index')->name('community_index')->middleware('can:view,App\Models\Community');
     Route::get('/community/create', 'CommunityController@create')->name('community_create')->middleware('can:create,App\Models\Community');
     Route::post('/community/create', 'CommunityController@store')->name('community_create')->middleware('can:create,App\Models\Community');
+    Route::get('/community/{communityId}/edit', 'CommunityController@edit')->name('community_edit')->middleware('can:create,App\Models\Community');
+    Route::put('/community/{communityId}/edit', 'CommunityController@update')->name('community_edit')->middleware('can:create,App\Models\Community');
 });
