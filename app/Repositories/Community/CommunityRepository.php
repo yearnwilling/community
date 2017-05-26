@@ -21,25 +21,4 @@ class CommunityRepository extends BaseRepository
     {
         return $this->model->get(array('*'));
     }
-
-    public function getAll($preload = array())
-    {
-        return $this->model->with($preload)->get();
-    }
-
-    public function search($pageNumber = 10, $preload = array())
-    {
-        return $this->model->with($preload)->paginate($pageNumber);
-    }
-
-    public function get($id, $preload = array())
-    {
-        return $this->model->with($preload)->where('id', '=', $id)->firstOrFail();
-    }
-
-    public function update($id, $params)
-    {
-        return $this->model->findOrFail($id)->update($params);
-    }
-
 }
