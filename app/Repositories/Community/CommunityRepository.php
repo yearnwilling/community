@@ -37,4 +37,9 @@ class CommunityRepository extends BaseRepository
         return $this->model->with($preload)->where('id', '=', $id)->firstOrFail();
     }
 
+    public function update($id, $params)
+    {
+        return $this->model->findOrFail($id)->update($params);
+    }
+
 }

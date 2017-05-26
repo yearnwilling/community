@@ -41,4 +41,9 @@ class CommunityServices extends BaseServices
     {
         return $this->getRepository('CommunityRepository')->get($communityId, array('president'));
     }
+
+    public function updateCommunity($communityId, $community)
+    {
+        return $this->getRepository('CommunityRepository')->update($communityId, $community);
+    }
 }

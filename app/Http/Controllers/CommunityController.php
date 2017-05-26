@@ -39,8 +39,7 @@ class CommunityController extends Controller
 
     public function update(CommunityPost $request, $communityId)
     {
-        var_dump($request->route('communityId'));
-        throw new \Exception('dd');
-//        $this->getService('CommunityService')->updateCommunity($communityId, $request->toArray());
+        $this->getService('CommunityService')->updateCommunity($communityId, $request->toArray());
+        return response()->json(array('status' =>  200 , 'msg' => '修改成功'));
     }
 }
