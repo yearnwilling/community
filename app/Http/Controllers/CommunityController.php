@@ -17,7 +17,7 @@ class CommunityController extends Controller
     public function create()
     {
         $communityTypes = $this->getService('CommunityTypeService')->find_community_type();
-        return view('community.add', compact('communityTypes'));
+        return view('community.add', array_merge(compact('communityTypes'), array('type' => 'add')));
     }
 
     public function store(CommunityPost $request)
@@ -39,7 +39,8 @@ class CommunityController extends Controller
 
     public function update(CommunityPost $request, $communityId)
     {
-        var_dump($communityId);
-        throw new \Exception('111');
+        var_dump($request->route('communityId'));
+        throw new \Exception('dd');
+//        $this->getService('CommunityService')->updateCommunity($communityId, $request->toArray());
     }
 }

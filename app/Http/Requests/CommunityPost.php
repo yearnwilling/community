@@ -26,7 +26,10 @@ class CommunityPost extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|unique:community,name',
+            'name' => [
+                'required',
+                Rule::unique('community','name')->whereNot('id', $this->route('communityId')),
+            ],
             'president_id' => 'required|exists:users,id'
         ];
     }
