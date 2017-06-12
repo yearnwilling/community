@@ -9,6 +9,7 @@
         "almasaeed2010/adminlte": "~2.0",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
+        "predis/predis": "^1.1",
         "yearnwilling/repository-services": "dev-master"
     },
     "repositories": [
